@@ -1,0 +1,32 @@
+
+strcpy function
+-----------------
+--> Prototype: char* strcpy(char *dst, const char*);
+
+--> The function copies a string from source address space to a destination address space included with '\0' byte.
+And return the Destination address.
+
+--> This function is only used for string copy from source to destination.
+--> This function may not follow the memory overlap techniques.
+
+
+memmove function
+-----------------
+--> Prototype: void* memmove(void* dst, const char* src, size_t nbyte);
+
+--> This function is used for copying source bytes data to destination address with n number of size in bytes.
+--> This is a generic type copy function. So, It will be used for copying with any type of data bytes.
+--> This function may follow memory overlap techniques. Because, internally the function will copy source byte data to
+    a temporary memory, and then that temporary data will copy to the destination address.
+--> The function does not check for any terminating null character in source - it always copies exactly num bytes.
+
+
+memcpy function
+-----------------
+--> Prototype: void* memcpy(void* dst, const char* src, size_t nbyte);
+
+--> This function is used for copying source bytes data to destination address with n number of size in bytes.
+--> This is a generic type copy function. So, It will be used for copying with any type of data bytes.
+--> This function may or may not follow memory overlap techniques based on platforms.
+--> This function is direct copy the data byte from source address data to the destination address. So, it will not copy exactly num bytes. 
+    Sometimes the data will lose or be repeated.
